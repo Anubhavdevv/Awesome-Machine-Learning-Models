@@ -87,26 +87,26 @@ Define Goal : PRODUCTS or ALGORITHMS
 
 ## Resources :
 
-http://www.maths.qmul.ac.uk/~pjc/notes/linalg.pdf (Maths)
+[Mathematics-1](http://www.maths.qmul.ac.uk/~pjc/notes/linalg.pdf)
 
-https://www.mathsbox.org.uk/twi/astats.pdf (Maths)
+[Mathematics-2](https://www.mathsbox.org.uk/twi/astats.pdf)
 
-https://www.youtube.com/playlist?list=PLLy_2iUCG87D1CXFxE-SxCFZUiJzQ3IvE (Maths)
+[Mathematics-2](https://www.youtube.com/playlist?list=PLLy_2iUCG87D1CXFxE-SxCFZUiJzQ3IvE)
 
-https://developers.google.com/machine-learning/crash-course (ML by Google)
+[Machine Learning Course by Google](https://developers.google.com/machine-learning/crash-course )
 
-https://www.datacamp.com/courses/intro-to-python-for-data-science (Python Basics)
+[Python Basics](https://www.datacamp.com/courses/intro-to-python-for-data-science )
 
-https://www.coursera.org/learn/machine-learning (Stanford Course by Andrew ng)
+[Stanford Course by Andrew ng](https://www.coursera.org/learn/machine-learning)
 
-https://madewithml.com/ 
+[Made With ML](https://madewithml.com/)
 
-https://www.javatpoint.com/data-preprocessing-machine-learning (Data Preprocessing)
+[Data Preprocessing](https://www.javatpoint.com/data-preprocessing-machine-learning )
 
-https://scikit-learn.org/stable/ (Scikit Learn)
+[Scikit Learn](https://scikit-learn.org/stable/)
 
-https://www.tensorflow.org/ (Tensorflow)
+[Tensorflow](https://www.tensorflow.org/)
 
-https://www.kaggle.com/ (Kaggle)
+[Kaggle](https://www.kaggle.com/)
 
 ![ml-engineer](https://user-images.githubusercontent.com/72249059/130322175-10237b03-926f-4dcd-b5ce-3a60b392ad38.png)
