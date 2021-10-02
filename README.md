@@ -1,5 +1,7 @@
 <h1 align = "center">You are welcome to contribute to this repository, you can contribute your repository of machine learning models, learning, and projects in the AI and ML fields. 😎</h1>
 
+![hacktobefest-2021](https://raw.githubusercontent.com/apoorvdwi/HacktoberFest-2021/e020f6e0ed6efb34e5cbf7806901fe445b5a6571/assets/hacktoberfest.svg)
+
 <h1 align = "center">DataScience and Machine-Learning Roadmap 😎</h1>
 
 
