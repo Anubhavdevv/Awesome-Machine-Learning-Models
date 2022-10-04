@@ -18,6 +18,7 @@
 
 Define Goal : PRODUCTS or ALGORITHMS
 
+## RESOURCES
 
 ## Maths
 - Linear Algebra (Matrix, Vector)
