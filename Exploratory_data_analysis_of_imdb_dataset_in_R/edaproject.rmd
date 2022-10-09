@@ -1,0 +1,612 @@
+---
+title: "Movie Analysis and Recommendation"
+output:
+  pdf_document: default
+  html_document:
+    fig_height: 4
+    highlight: pygments
+    theme: spacelab
+---
+
+### Authors: Tejaswi Kumar
+
+```{r}
+data<-read.csv(file="imdb.csv")
+```
+
+```{r, echo = F}
+library('knitr')
+library('formatR')
+library('dplyr')
+library('ggplot2')
+opts_chunk$set(tidy.opts=list(width.cutoff=80),tidy=TRUE)
+```
+
+# Q. How is duration of movie related to rating ?
+
+To accomplish this task, my first job is to analyze the data. Hence, I am first importing the data.
+I did some preliminary analysis in Excel to understand what are some of the missing values in the data. I can do the same in R as well, but it was quicker to take a quick view of the data in Excel before importing the whole data set into R
+
+```{r}
+rm(list=ls())
+movie = read.csv("imdb.csv", 
+                  header =T, na.strings=c("No Rate","No Votes","-"))
+movie = unique(movie) # removing duplicate rows in the data frame
+str(movie)
+movie[0:5,]
+```
+
+Now the next task in hand was to find the movies with missing duration.
+
+```{r}
+unique(movie[c("Duration")])
+
+```
+But this was too hard to shift through so I started looking for non numerical values in this column.
+
+```{r}
+movie[which(is.na(as.numeric(as.character(movie[['Duration']])))),'Duration']
+```
+As it is visible all the non numerical values in the duration column are None. So I can identify the movies with missing duration as they all have "None".
+Now I want to understand what are the other coloumn values for these rows. So I can identify why are these values missing.
+
+```{r}
+missing_dur = movie[which(is.na(as.numeric(as.character(movie[['Duration']])))),]
+missing_dur
+```
+The first thing I noticed is that some movies have year mentioned as 2021. So it got me thinking that maybe there are movies which are yet to be released. Hence they do not have a running time. As it also mention Spide-Man: No Way Home as it is yet to be released. So now I am sorting movies by year.
+
+```{r}
+missing_dur[order(missing_dur$Date, decreasing = TRUE),] 
+```
+Hence I will be dropping all the movies that are having Duration as None and have no rating and Votes as these movies are irrelevant to us.
+
+```{r}
+movie = movie[!(is.na(movie$Rate) & movie$Duration=="None"),] 
+missing_dur = movie[which(is.na(as.numeric(as.character(movie[['Duration']])))),]
+filter(missing_dur,missing_dur$Type=="Film")
+
+```
+
+After searching on the internet I was unable to find the duration for the said movies. Hence I will be dropping these 3 Movies.
+
+```{r}
+movie = movie[!(movie$Duration=="None" & movie$Type=="Film" ),] 
+movie = transform(movie, Duration = as.numeric(Duration)) 
+str(movie)
+missing_dur = movie[which(is.na(as.numeric(as.character(movie[['Duration']])))),]
+filter(missing_dur,missing_dur$Type=="Film")
+
+```
+
+So I have successfully analyzed the reason behind the movie with duration as None and removed them from the database based on proper reasoning.
+
+I want to know, the distribution of movies based on their duration.
+```{r}
+movie_film = filter(movie,movie$Type=="Film")
+ggplot(movie_film, aes(x=Duration))+
+  geom_histogram(color="darkblue", fill="lightblue",binwidth = 2)
+```
+Now let us plot the graph of the ratings and the duration of the movies.
+
+```{r}
+# Add the regression line
+ggplot(movie_film, aes(x=Duration, y=Rate)) + 
+  geom_point()+
+  geom_smooth(method=lm)
+# Remove the confidence interval
+ggplot(movie_film, aes(x=Duration, y=Rate)) + 
+  geom_point()+
+  geom_smooth(method=lm, se=FALSE)
+# Loess method
+ggplot(movie_film, aes(x=Duration, y=Rate)) + 
+  geom_point()+
+  geom_smooth()
+```
+It is visible from the graph there is only slight relation between rating and the duration of the movie. It can be seen that very that with increase in the length of the movie there is some increase in the rating. 
+```{r}
+cor.test(movie_film$Duration, movie_film$Rate, method=c("pearson"))
+```
+I have used the Pearson's correlation to test this hypothesis. It tell that there exists a positive correlation between length of movie and the rating. This is also significant as the p value of this is 2.2e-16 which is significantly less than 0.05.
+
+# Q. For series does number of episodes determine rating ?
+
+
+To accomplish the given task my first step was to understand the data. Find if there are series which do not have number of episodes. Series which have the number of episodes but are not rated yet. 
+
+```{r}
+rm(list=ls())
+movie = read.csv("imdb.csv", 
+                  header =T, na.strings=c("No Rate","No Votes","-"))
+movie = unique(movie) # removing duplicate rows in the data frame
+str(movie)
+movie[0:5,]
+```
+As I am only interested in the Series. I have chosen to filter the data of series into a separate datframe.
+
+```{r}
+series = filter(movie,movie$Type=="Series")
+series[0:5,]
+```
+Now my next job is to find all the rows where the number of episode is missing.
+
+```{r}
+unique(series[c("Episodes")])
+```
+
+As the column itself is numeric. I am sure that there are no missing values in the episodes. My next task was to find if there are any series that are not rated yet.
+
+```{r}
+series[(is.na(series$Rate)),]
+```
+My next step after looking at the data was to remove the rows from this dataset with year of release greater than 2021, as they have not been released yet. They have just been announced or only the pilot has been aired.
+
+```{r}
+series = series[!(is.na(series$Rate) & series$Date>=2021),]
+arrange(series[(is.na(series$Rate)),],desc(Date))
+```
+
+So I have dropped all the rows that had series which had no rating and were released in the year greater than or equal to 2021. Then I started my manual search to find the rating for these series, which were left. I was able to find ratings for some of the Series.
+Cowboy Bebop 2021 6.7
+Star Trek Prodigy 6.6
+4400 4.2
+I was unable to find the rating for all other series. Hence I had no other option to drop them. As there each episode is directed by a different director, so there is no predicting the rating. All that work is not needed for 20 rows of data.
+
+
+```{r}
+series[which(series$Name == "Cowboy Bebop"),3]  = 6.7
+series[which(series$Name == "Star Trek: Prodigy"),3]  = 6.6
+series[which(series$Name == "4400"),3]  = 4.2
+arrange(series[(is.na(series$Rate)),],desc(Date))
+```
+
+So the values of all available rating of series has been set. Now I am dropping the rows with unrated series.
+
+```{r}
+series = series[!(is.na(series$Rate)),]
+arrange(series[(is.na(series$Rate)),],desc(Date))
+```
+
+
+As we can see I have a dataframe where there are no missing values in the column which we desire to perform our analysis on.
+I want to analyze the distribution of number of episodes in the Series.
+
+```{r}
+ggplot(series, aes(x=Episodes))+
+  geom_histogram(color="darkblue", fill="lightblue",binwidth = 2)
+```
+So let us the scatter plot of the series episodes and the rating.
+
+```{r}
+ggplot(series, aes(x=Episodes, y=Rate)) + 
+  geom_point()+
+  geom_smooth(method=lm)
+# Remove the confidence interval
+ggplot(series, aes(x=Episodes, y=Rate)) + 
+  geom_point()+
+  geom_smooth(method=lm, se=FALSE)
+# Loess method
+ggplot(series, aes(x=Episodes, y=Rate)) + 
+  geom_point()+
+  geom_smooth()
+```
+Plotting the same result after removing the outliers.
+
+```{r}
+series_out = series
+boxplot(series$Episodes)
+remove_outliers <- function(x, na.rm = TRUE, ...) {
+  qnt <- quantile(x, probs=c(.25, .75), na.rm = na.rm, ...)
+  H <- 1.5 * IQR(x, na.rm = na.rm)
+  y <- x
+  y[x < (qnt[1] - H)] <- NA
+  y[x > (qnt[2] + H)] <- NA
+  y
+}
+series_out$Episodes = remove_outliers(series$Episodes)
+boxplot(series_out$Episodes)
+```
+```{r}
+ggplot(series_out, aes(x=Episodes, y=Rate)) + 
+  geom_point()+
+  geom_smooth(method=lm)
+# Remove the confidence interval
+ggplot(series_out, aes(x=Episodes, y=Rate)) + 
+  geom_point()+
+  geom_smooth(method=lm, se=FALSE)
+# Loess method
+ggplot(series_out, aes(x=Episodes, y=Rate)) + 
+  geom_point()+
+  geom_smooth()
+```
+Now I finding the correlation between the number of episodes and the rating.
+
+```{r}
+shapiro.test(series$Episodes)
+shapiro.test(series$Rate)
+cor.test(series$Episodes, series$Rate, method=c("pearson"))
+cor.test(series$Episodes, series$Rate, method=c("spearman"))
+cor.test(series_out$Episodes, series_out$Rate, method=c("pearson"))
+cor.test(series_out$Episodes, series_out$Rate, method=c("spearman"))
+```
+
+I have conducted two correlation test, one is the pearson's correlation test and the other is spearman's test. The test show that there is not much correlation between the number of episodes and the rating of the series. If I include the outliers, that is the series where the number of episodes are extremely large, there is negative correlation. This is wrong as these series are very less, but there effect on correlation is overfit. Hence I am performing the second test with removal of outliers based on the number of episodes.
+
+# Q. Over the years has violence , profanity became more in movies?
+
+```{r}
+library(dplyr)
+library(ggplot2)
+library(babynames) # provide the dataset: a dataframe called babynames
+library(viridis)
+library(graphics)
+```
+
+```{r}
+df <- read.csv("imdb.csv")
+str(df)
+
+date_profanity_df <- data.frame(Date= df$Date, Profanity= df$Profanity)
+date_profanity_df <- filter(date_profanity_df, Profanity != "No Rate")
+
+date_profanity_NONE_df <- filter(date_profanity_df, Profanity == "None")
+date_profanity_MILD_df <- filter(date_profanity_df, Profanity == "Mild")
+date_profanity_MODERATE_df <- filter(date_profanity_df, Profanity == "Moderate")
+date_profanity_SEVERE_df <- filter(date_profanity_df, Profanity == "Severe")
+
+date_profanity_NONE_df <- date_profanity_NONE_df %>%
+  group_by(Date) %>%
+  summarise(none_count=n()) %>%
+  arrange(Date)
+
+date_profanity_MILD_df <- date_profanity_MILD_df %>%
+  group_by(Date) %>%
+  summarise(mild_count=n()) %>%
+  arrange(Date)
+
+date_profanity_MODERATE_df <- date_profanity_MODERATE_df %>%
+  group_by(Date) %>%
+  summarise(moderate_count=n()) %>%
+  arrange(Date)
+
+date_profanity_SEVERE_df <- date_profanity_SEVERE_df %>%
+  group_by(Date) %>%
+  summarise(severe_count=n()) %>%
+  arrange(Date)
+
+# data_profanity_categorized <- cbind(date_profanity_NONE_df, date_profanity_MILD_df$mild_count, date_profanity_MODERATE_df$moderate_count, date_profanity_SEVERE_df$severe_count)
+```
+
+```{r}
+func_df <- filter(date_profanity_df, Profanity == "None")
+clean_none_profanity_data <- function( func_df, count_col_name){
+ require("dplyr")
+ tempCounter = 1922
+ tempDF <- func_df
+ NNN = nrow(func_df)
+ i <- 1
+ while (i <= NNN) {
+ print(func_df[i,1])
+ while( NNN < i){
+ tempDF <- rbind( tempDF, data.frame(Date= tempCounter, moderate_count= 0))
+ NNN <- NNN + 1
+ }
+ if( func_df[i,1] != tempCounter){
+ tempDF <- rbind( tempDF, data.frame(Date= tempCounter, none_count= 0))
+ #tempCounter <- tempCounter- 1
+ i <- i - 1
+ }
+ tempCounter <- tempCounter+ 1
+ NNN = nrow(func_df)
+  i <- i + 1
+ }
+ func_df <- tempDF
+ func_df <- func_df %>%
+ arrange(Date)
+ return( func_df)
+}
+func_df <- filter(date_profanity_df, Profanity == "Mild")
+clean_mild_profanity_data <- function( func_df, count_col_name){
+ require("dplyr")
+ tempCounter = 1922
+ tempDF <- func_df
+ NNN = nrow(func_df)
+ i <- 1
+ while (i <= NNN) {
+ print(func_df[i,1])
+ while( NNN < i){
+ tempDF <- rbind( tempDF, data.frame(Date= tempCounter, moderate_count= 0))
+ NNN <- NNN + 1
+ }
+ if( func_df[i,1] != tempCounter){
+ tempDF <- rbind( tempDF, data.frame(Date= tempCounter, mild_count= 0))
+ #tempCounter <- tempCounter- 1
+ i <- i - 1
+ }
+ tempCounter <- tempCounter+ 1
+ NNN = nrow(func_df)
+ i <- i + 1
+ }
+ func_df <- tempDF
+ func_df <- func_df %>%
+ arrange(Date)
+ return( func_df)
+}
+func_df <- filter(date_profanity_df, Profanity == "Moderate")
+clean_severe_profanity_data <- function( func_df, count_col_name){
+ require("dplyr")
+ tempCounter = 1922
+ tempDF <- func_df
+ NNN = nrow(func_df)
+ i <- 1
+ while (i <= NNN) {
+ print(func_df[i,1])
+ while( NNN < i){
+ tempDF <- rbind( tempDF, data.frame(Date= tempCounter, moderate_count= 0))
+ NNN <- NNN + 1
+ }
+ if( func_df[i,1] != tempCounter){
+ tempDF <- rbind( tempDF, data.frame(Date= tempCounter, severe_count= 0))
+ #tempCounter <- tempCounter- 1
+ i <- i - 1
+ }
+ tempCounter <- tempCounter+ 1
+ NNN = nrow(func_df)
+ i <- i + 1
+ }
+ func_df <- tempDF
+ func_df <- func_df %>%
+ arrange(Date)
+ return( func_df)
+}
+func_df <- filter(date_profanity_df, Profanity == "Severe")
+clean_moderate_profanity_data <- function( func_df, count_col_name){
+ require("dplyr")
+ tempCounter = 1922
+ tempDF <- func_df
+ NNN = nrow(func_df)
+ i <- 1
+ while (i <= NNN) {
+ print(func_df[i,1])
+ NNN = nrow(func_df)
+ while( NNN < i){
+ tempDF <- rbind( tempDF, data.frame(Date= tempCounter, moderate_count= 0))
+ NNN <- NNN + 1
+ }
+ if( func_df[i,1] != tempCounter){
+ tempDF <- rbind( tempDF, data.frame(Date= tempCounter, moderate_count= 0))
+ #tempCounter <- tempCounter- 1
+ i <- i - 1
+ }
+ tempCounter <- tempCounter+ 1
+ NNN = nrow(func_df)
+ i <- i + 1
+ }
+ func_df <- tempDF
+ func_df <- func_df %>%
+ arrange(Date)
+ return( func_df)
+}
+date_profanity_NONE_df <- clean_none_profanity_data(date_profanity_NONE_df, "none_count")
+
+```
+
+```{r}
+date_profanity_MODERATE_df <- clean_moderate_profanity_data(date_profanity_MODERATE_df, "moderate_count")
+```
+
+```{r}
+# date_profanity_MODERATE_df <- date_profanity_MODERATE_df[-c(102),]
+# 
+# df <- cbind(date_profanity_NONE_df, mild_count=date_profanity_MILD_df$mild_count, moderate_count=date_profanity_MODERATE_df$moderate_count, severe_count=date_profanity_SEVERE_df$severe_count)
+# 
+# #png("Profanity_date.png")
+# par(new=TRUE)
+# plot(df$Date, df$none_count, type = "l", lty = 1, col="red", xlab = "Date", ylab = "Count")
+# lines(df$Date, df$mild_count, type = "l", lty = 1, col= "green")
+# lines(df$Date, df$moderate_count, type = "l", lty = 1, col= "blue")
+# lines(df$Date, df$severe_count, type = "l", lty = 1, col= "orange", xlab = "Date", ylab = "Count")
+# legend("topleft", legend=c("None", "Mild", "Moderate", "Severe"),
+#        col=c("red", "green", "blue", "orange"), lty=1:2, cex=0.8)
+
+```
+
+# Q. If you are making a movie, what type of content would ensure good ratings?
+
+```{r}
+df <- read.csv("imdb.csv")
+str(df)
+
+df <- filter(df, Rate != "No Rate")
+df <- filter(df, Violence != "No Rate")
+df <- filter(df, Nudity != "No Rate")
+df <- filter(df, Alcohol != "No Rate")
+df <- filter(df, Frightening != "No Rate")
+
+df$Duration <- trimws(df$Duration, which = c("left"))
+df$Duration <- trimws(df$Duration, which = c("right"))
+sum(is.na(df$Duration))
+```
+
+```{r}
+nrow(filter(df,Duration == ""))
+```
+
+```{r}
+df <- filter(df, Duration != "None")
+df$Duration <- as.numeric(df$Duration)
+
+movie_df <- filter(df, Type == "Film")
+movie_df <- subset(df, select = c(-Type))
+df$Nudity <- factor(df$Nudity)
+df$Violence <- factor(df$Violence)
+df$Profanity <- factor(df$Profanity)
+df$Alcohol <- factor(df$Alcohol)
+df$Frightening <- factor(df$Frightening)
+df$Rate <- as.numeric(df$Rate)
+
+movie_df <- data.frame( Rate= df$Rate, Nudity= df$Nudity, Violence= df$Violence, Alcohol= df$Alcohol, Frightening= df$Frightening)
+
+movie_df$Nudity <- as.numeric(movie_df$Nudity)
+movie_df$Violence <- as.numeric(movie_df$Violence)
+movie_df$Alcohol <- as.numeric(movie_df$Alcohol)
+movie_df$Frightening <- as.numeric(movie_df$Frightening)
+
+png("Model_rating_with_factors.png")
+model <- lm(Rate~Nudity+Violence+Alcohol+Frightening, data = movie_df)
+dev.off()
+summary(model)
+```
+
+```{r}
+# png("Residual_for_rate_model.png")
+plot(model, 1)
+```
+
+```{r}
+#png("nudity_box.png")
+plot(df$Nudity, df$Rate, type = "l", lty = 1, col="red", xlab = "Nudity", ylab = "Rate")
+```
+
+```{r}
+#png("violence_box.png")
+plot(df$Violence, df$Rate, type = "l", lty = 1, col="red", xlab = "Violence", ylab = "Rate")
+```
+
+```{r}
+#png("violence_box.png")
+plot(df$Alcohol, df$Rate, type = "l", lty = 1, col="red", xlab = "Alcohol", ylab = "Rate")
+```
+
+```{r}
+#png("frigthening_box.png")
+plot(df$Frightening, df$Rate, type = "l", lty = 1, col="red", xlab = "Frightening", ylab = "Rate")
+```
+
+
+# Q. Which certificate are being are more released nowadays?
+
+```{r}
+data<-read.csv(file="imdb.csv")
+head(data)
+freq<-table(data$Certificate)
+names(freq[which.max(freq)])
+pie(freq)
+```
+
+# Observation: R-rated Certificates has been released as comparerd to other certificate movies over the year.
+
+# Q. Does movie meant for children contain more violence, alcohol, nudity, etc.
+
+
+# 1. Nudity
+
+```{r}
+df<-data[!(data$Certificate=='None' | data$Nudity=='No Rate'),]
+head(df)
+
+nud <- factor(df$Nudity)
+levels(nud) <- c("None","Mild","Moderate","Severe")
+v <- c('TV-Y','TV-Y7','G','TV-G','PG','TV-PG')
+df$child <- ifelse(df$Certificate %in% v,"Child", "Non Child")
+t <- table(df$child, nud)
+barplot(t,
+        main = "Grouped barchart",
+        xlab = "Nudity", ylab = "Frequency",
+        col = c("darkblue","green"),
+        legend.text = rownames(t),  args.legend = list(x = "topright", bty = "n", inset=c(-0.15, 0)),
+        beside = TRUE)
+```
+
+# 2. Violence
+
+```{r}
+df<-data[!(data$Certificate=='None' | data$Violence=='No Rate'),]
+head(df)
+
+vio <- factor(df$Violence)
+levels(vio) <- c("None","Mild","Moderate","Severe")
+v <- c('TV-Y','TV-Y7','G','TV-G','PG','TV-PG')
+df$child <- ifelse(df$Certificate %in% v,"Child", "Non Child")
+t <- table(df$child, vio)
+barplot(t,
+        main = "Grouped barchart",
+        xlab = "Violence", ylab = "Frequency",
+        col = c("darkblue","green"),
+        legend.text = rownames(t),  args.legend = list(x = "topright", bty = "n", inset=c(-0.15, 0)),
+        beside = TRUE)
+```
+
+
+# 3. Profanity
+
+```{r}
+df<-data[!(data$Certificate=='None' | data$Profanity=='No Rate'),]
+head(df)
+
+p <- factor(df$Profanity)
+levels(p) <- c("None","Mild","Moderate","Severe")
+v <- c('TV-Y','TV-Y7','G','TV-G','PG','TV-PG')
+df$child <- ifelse(df$Certificate %in% v,"Child", "Non Child")
+t <- table(df$child, p)
+barplot(t,
+        main = "Grouped barchart",
+        xlab = "Profanity", ylab = "Frequency",
+        col = c("darkblue","green"),
+        legend.text = rownames(t),  args.legend = list(x = "topright", bty = "n", inset=c(-0.15, 0)),
+        beside = TRUE)
+```
+
+#  4. Alcohol
+
+```{r}
+df<-data[!(data$Certificate=='None' | data$Alcohol=='No Rate'),]
+head(df)
+
+a <- factor(df$Alcohol)
+levels(a) <- c("None","Mild","Moderate","Severe")
+v <- c('TV-Y','TV-Y7','G','TV-G','PG','TV-PG')
+df$child <- ifelse(df$Certificate %in% v,"Child", "Non Child")
+t <- table(df$child, a)
+barplot(t,
+        main = "Grouped barchart",
+        xlab = "Alcohol", ylab = "Frequency",
+        col = c("darkblue","green"),
+        legend.text = rownames(t), args.legend = list(x = "topright", bty = "n", inset=c(-0.15, 0)),
+        beside = TRUE)
+```
+
+#  5. Frightening
+
+```{r}
+df<-data[!(data$Certificate=='None' | data$Frightening=='No Rate'),]
+head(df)
+
+f <- factor(df$Frightening)
+levels(f) <- c("None","Mild","Moderate","Severe")
+v <- c('TV-Y','TV-Y7','G','TV-G','PG','TV-PG')
+df$child <- ifelse(df$Certificate %in% v,"Child", "Non Child")
+t <- table(df$child, f)
+barplot(t,
+        main = "Grouped barchart",
+        xlab = "Frightening", ylab = "Frequency",
+        col = c("darkblue","green"),
+        legend.text = rownames(t), args.legend = list(x = "topright", bty = "n", inset=c(-0.15, 0)),
+        beside = TRUE)
+```
+
+# Observation: No, the movies for children do not contain more violence, alcohol, nudity, etc, as compared to adult movies.
+
+# Q. Over the year the trend of IMDB rating 
+
+```{r}
+n1<-as.numeric(data$Rate)
+n2<-as.numeric(data$Date)
+model = lm(n1~n2, data = data) #Create the linear regression
+summary(model)
+
+plot(n1~n2, data = data)
+abline(model)
+```
+
+# Observation: Over the years, IMDB has significantly decreased and at the same time, the number of movies has increased tremendously.
