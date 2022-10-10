@@ -1,0 +1,1 @@
+This notebook contains insights on salaries of jobs in the Data Science domain.
