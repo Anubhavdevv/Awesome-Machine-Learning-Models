@@ -1,0 +1,155 @@
+logTransformer = FunctionTransformer(func=np.log1p, inverse_func=np.expm1)
+
+exp_column_transformers = [
+    ('BsmtFinSF1', logTransformer, ['BsmtFinSF1']),
+    ('BsmtFinSF2', logTransformer, ['BsmtFinSF2']),
+    ('BsmtUnfSF', logTransformer, ['BsmtUnfSF']),
+    ('Neighborhood', OneHotEncoder(categories=[neighborhoodCategories]), ['Neighborhood']),
+    ('MSSubClass', OneHotEncoder(categories=[subclassCategories]), ['MSSubClass']),
+    ('LotShape', OneHotEncoder(categories=[lotShapeCategories]), ['LotShape']),
+    ('LandSlope', OneHotEncoder(categories=[landSlopeCategories]), ['LandSlope']),
+    ('SaleCondition', OneHotEncoder(categories=[saleCondCategories]), ['SaleCondition']),
+    ('Condition1', OneHotEncoder(categories=[conditionCategories]), ['Condition1']),
+    ('Condition2', OneHotEncoder(categories=[conditionCategories]), ['Condition2']), 
+]
+
+baseline_cv_metrics = {
+    'r2': 0.84,
+    'mae': 19136.67,
+    'mse': 1041533950.96,
+}
+
+wo_feature_results = {}
+
+for feature_to_excl in baseline_features:
+    model_features = [feature for feature in baseline_features if feature != feature_to_excl]
+    x_features = train_df[model_features]
+
+    model_column_transformers = [transformer for transformer in exp_column_transformers if transformer[0] != feature_to_excl]
+    experimental_feature_transformer = ColumnTransformer(model_column_transformers, remainder='passthrough')
+
+    rf_pipeline = Pipeline([
+        ('preprocessing', experimental_feature_transformer),
+        ('random_forest', RandomForestRegressor(
+            bootstrap=True,
+            random_state=42,
+            max_depth=15,
+            min_samples_leaf=5,
+            min_samples_split=5,
+            n_estimators=1200,
+        )),
+    ])
+
+    model_scores = cross_validate(
+        rf_pipeline, x_features, Y, 
+        scoring=['r2', 'neg_mean_absolute_error', 'neg_mean_squared_error'], 
+        n_jobs=-1, verbose=0)
+
+    wo_feature_results[feature_to_excl] = {
+        'r2': model_scores['test_r2'].mean() - baseline_cv_metrics['r2'],
+        'mae': baseline_cv_metrics['mae'] - (-1 * model_scores['test_neg_mean_absolute_error'].mean()) ,
+        'mse': baseline_cv_metrics['mse'] - (-1 * model_scores['test_neg_mean_squared_error'].mean()),
+    }
+
+    model_column_transformers = [transformer for transformer in exp_column_transformers if transformer[0] != feature_to_excl]
+    experimental_feature_transformer = ColumnTransformer(model_column_transformers, remainder='passthrough')
+
+    rf_pipeline = Pipeline([
+        ('preprocessing', experimental_feature_transformer),
+        ('random_forest', RandomForestRegressor(
+            bootstrap=True,
+            random_state=42,
+            max_depth=15,
+            min_samples_leaf=5,
+            min_samples_split=5,
+            n_estimators=1200,
+        )),
+    ])
+
+    rf_pipeline.fit(x_features, Y)
+
+    model_scores = cross_validate(
+        rf_pipeline, x_features, Y, 
+        scoring=['r2', 'neg_mean_absolute_error', 'neg_mean_squared_error'], 
+        n_jobs=-1, verbose=0)
+
+    wo_feature_results[feature_to_excl] = {
+        'r2': model_scores['test_r2'].mean() - baseline_cv_metrics['r2'],
+        'mae': baseline_cv_metrics['mae'] - (-1 * model_scores['test_neg_mean_absolute_error'].mean()) ,
+        'mse': baseline_cv_metrics['mse'] - (-1 * model_scores['test_neg_mean_squared_error'].mean()),
+    }
+    
+wo_feature_results
+
+{'1stFlrSF': {'r2': -0.028843697164090076,
+  'mae': -2198.1546643352813,
+  'mse': -164510384.78400898},
+ '2ndFlrSF': {'r2': -0.011707040267894153,
+  'mae': -943.9787852889567,
+  'mse': -57792043.03922057},
+ 'BsmtFinSF1': {'r2': -0.0052853407078671255,
+  'mae': -207.78839373292794,
+  'mse': -14790606.804089189},
+ 'BsmtFinSF2': {'r2': -0.002819262893235308,
+  'mae': -16.579385280994757,
+  'mse': -557318.6504253149},
+ 'BsmtFinType1Enc': {'r2': -0.002763493976370879,
+  'mae': -45.650710431324114,
+  'mse': -166550.53847146034},
+ 'BsmtFinType2Enc': {'r2': -0.0027339613981264277,
+  'mae': -1.3930692876529065,
+  'mse': -61971.590247511864},
+ 'BsmtUnfSF': {'r2': -0.0010359263286406906,
+  'mae': 119.67756746848318,
+  'mse': 11897989.68461895},
+ 'OverallQual': {'r2': -0.021772904079939148,
+  'mae': -1152.7349815625494,
+  'mse': -122992943.92674398},
+ 'GarageCondEnc': {'r2': -0.0024623476131598876,
+  'mae': 30.83632521708205,
+  'mse': 1376371.0605735779},
+ 'GarageCars': {'r2': -0.012654594067661562,
+  'mae': -543.1172630400288,
+  'mse': -61172969.297932625},
+ 'OverallCond': {'r2': -0.004936390665692292,
+  'mae': -235.77709718171536,
+  'mse': -13418817.306381464},
+ 'Neighborhood': {'r2': -0.0027987750316537108,
+  'mae': -80.0634154960353,
+  'mse': -1206245.8913099766},
+ 'MSSubClass': {'r2': -0.003934516897929341,
+  'mae': -166.70184603957023,
+  'mse': -7648309.763953805},
+ 'LotShape': {'r2': -0.0028626163395929494,
+  'mae': -20.85445124159014,
+  'mse': -589851.6945015192},
+ 'LandSlope': {'r2': -0.0029186948077704056,
+  'mae': -16.70176694188558,
+  'mse': -1073057.4560728073},
+ 'BsmtCondEnc': {'r2': -0.0028845687923060304,
+  'mae': -34.25776572370887,
+  'mse': -1042246.7875829935},
+ 'BsmtQualEnc': {'r2': -0.0025385465451285283,
+  'mae': -6.834623450304207,
+  'mse': 1274889.9716646671},
+ 'SaleCondition': {'r2': -0.0033046362607129787,
+  'mae': -30.890874731914664,
+  'mse': -3499248.011003256},
+ 'CentralAirEnc': {'r2': -0.0036947118877124208,
+  'mae': -117.9138984429519,
+  'mse': -6019208.3530792},
+ 'Condition1': {'r2': -0.003127834265675089,
+  'mae': -10.446679850843793,
+  'mse': -2598841.442111373},
+ 'Condition2': {'r2': -0.0027362740785066286,
+  'mae': -2.90348602641825,
+  'mse': -121716.94573426247},
+ 'FullBath': {'r2': -0.004990082875156565,
+  'mae': -184.68981419989723,
+  'mse': -15785857.26153469},
+ 'GarageFinishEnc': {'r2': -0.003306038459806926,
+  'mae': -29.410441591426206,
+  'mse': -3584759.2187553644},
+ 'KitchenQualEnc': {'r2': -0.004101742534293851,
+  'mae': -136.55199978680685,
+  'mse': -8215167.888692856}}

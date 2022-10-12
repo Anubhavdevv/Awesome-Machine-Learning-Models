@@ -1,0 +1,25 @@
+[tool.poetry]
+name = "house-prices"
+version = "0.1.0"
+description = ""
+authors = ["Roman Glushko <roman.glushko.m@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.7"
+pandas = "^1.1.4"
+ipykernel = "^5.3.4"
+scikit-learn = "^0.23.2"
+numpy = "^1.19.4"
+seaborn = "^0.11.0"
+matplotlib = "^3.3.3"
+scikit-optimize = "^0.8.1"
+xgboost = "^1.2.1"
+plotly = "^4.14.0"
+shap = "^0.37.0"
+eli5 = "^0.10.1"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
