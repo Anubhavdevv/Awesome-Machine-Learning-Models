@@ -1,5 +1,8 @@
 # -*- coding: utf-8 -*-
+<<<<<<< HEAD
 """Liver Disease Prediction using TensorFlow
+=======
+>>>>>>> b303dbdc841b128630731078a72efe58a9b60e92
 
 #Getting Started
 
