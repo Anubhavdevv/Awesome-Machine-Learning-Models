@@ -1,0 +1,455 @@
+Branch,Gender,10th %,12th %,CGPA Till 6th,Diploma %,6th Sem SGPA,Internship,Placement
+Bio-Medical Engineering,M,49.33,53,6.32,0,8.22,1,0
+Bio-Medical Engineering,M,70.5,55.8,6.84,0,8.83,1,1
+Bio-Medical Engineering,M,53.2,70,6.71,0,8.52,1,0
+Bio-Medical Engineering,M,86.5,78.4,7.19,0,8.96,1,0
+Bio-Medical Engineering,M,81.7,67.2,7.28,0,9.52,1,0
+Bio-Medical Engineering,M,78.33,74.8,7.4,0,9.17,1,0
+Civil Engineering,F,95,78.8,8.07,0,8.7,1,0
+Civil Engineering,M,76,71,6.54,0,7.7,1,0
+Civil Engineering,M,60.8,62.4,7.02,0,8,0,0
+Civil Engineering,M,84,80.2,7.17,0,8.35,1,1
+Civil Engineering,M,49.4,78,7.04,0,8.15,1,0
+Civil Engineering,M,89.3,74.8,7.15,0,8.45,1,0
+Civil Engineering,M,67.5,69,7.17,0,7.95,1,0
+Civil Engineering,M,79.8,62.8,8.4,0,8.5,1,1
+Civil Engineering,M,80.67,66,6.87,0,8.35,0,0
+Civil Engineering,M,71.83,56.2,6.64,0,8.1,1,0
+Civil Engineering,M,75.5,81.6,6.13,0,6.9,1,0
+Civil Engineering,M,82.5,77.6,7.13,0,8.2,0,0
+Civil Engineering,F,62.83,67.6,7.45,0,7.8,1,0
+Civil Engineering,F,83.6,77.2,7.47,0,8.5,1,0
+Civil Engineering,M,75.83,74.4,7.96,0,8.6,1,1
+Civil Engineering,M,68.4,72.8,7.37,0,8.4,1,0
+Civil Engineering,F,91.67,87.8,7.53,0,8.4,1,0
+Civil Engineering,M,75,61.4,5.49,0,8,1,0
+Civil Engineering,M,81.7,72.2,7.59,0,8.45,1,0
+Civil Engineering,M,68.5,67.6,6.33,0,7.5,0,0
+Civil Engineering,M,82.67,79.4,6.48,0,7.35,1,0
+Civil Engineering,M,71.67,67,6.74,0,8.1,0,0
+Civil Engineering,M,81.7,65.4,7.11,0,8.35,1,0
+Civil Engineering,M,61.83,83.6,7.16,0,8.55,1,0
+Civil Engineering,M,80,74.8,6.97,0,8.05,0,1
+Civil Engineering,F,54,62,5.99,0,7.35,1,0
+Civil Engineering,M,68.4,57.2,6.41,0,7.65,1,0
+Civil Engineering,M,83.17,73.8,6.95,0,8.1,1,0
+Civil Engineering,M,83.17,73.8,7.02,0,8.1,1,0
+Civil Engineering,M,57.33,52.2,4.57,0,6.55,1,0
+Civil Engineering,F,83.33,71.8,6.62,0,7.85,1,0
+Civil Engineering,F,90.5,81,7.47,0,8.3,1,0
+Civil Engineering,M,85.67,79.8,6.92,0,7.55,1,0
+Civil Engineering,M,48.66,47,5.1,0,7.5,1,0
+Civil Engineering,M,89.3,71,8.35,0,8.7,1,0
+Civil Engineering,M,81.7,76.4,7.5,0,8.2,1,0
+Civil Engineering,M,66.5,64.2,6.86,0,7.8,0,0
+Civil Engineering,F,87.4,89.4,7.73,0,8.1,1,0
+Civil Engineering,M,62.7,53.8,6.47,0,7.8,1,0
+Civil Engineering,M,72.2,68.8,6.7,0,7.7,0,0
+Civil Engineering,M,69.5,56.8,6.38,0,7.4,1,0
+Civil Engineering,M,64.33,68.6,6.86,0,8,1,0
+Civil Engineering,M,60,50.4,4.85,0,7.15,1,0
+Civil Engineering,M,81.7,74.8,7.49,0,8.55,1,1
+Civil Engineering,M,87.4,67.2,6.71,0,8.1,1,0
+Civil Engineering,F,79.8,73.2,7.96,0,8.95,1,1
+Civil Engineering,M,78.33,74,6.98,0,8.3,1,0
+Civil Engineering,M,95,75,6.89,0,8.4,1,0
+Civil Engineering,F,88.67,87.2,7.52,0,8.4,1,0
+Civil Engineering,M,85.5,88.6,7.18,0,7.95,1,0
+Civil Engineering,M,89.17,82.2,7.07,0,7.6,1,0
+Civil Engineering,F,87.4,85.6,8.43,0,8.55,1,0
+Civil Engineering,M,85.5,80,7.51,0,8.4,0,1
+Civil Engineering,F,89.3,89.4,8.64,0,8.9,1,1
+Civil Engineering,F,95,75.2,8.19,0,8.65,1,0
+Civil Engineering,M,91.33,89.8,7.47,0,8.6,1,0
+Civil Engineering,M,75.33,51.8,4.46,0,6.45,1,0
+Civil Engineering,M,77.9,73.4,7.31,0,8.45,1,0
+Civil Engineering,F,78.67,74.4,6.47,0,7.8,1,0
+Civil Engineering,F,85.66,85.4,7.93,0,8.2,1,0
+Civil Engineering,M,86.33,81.2,7.48,0,8.4,1,0
+Civil Engineering,M,78.33,77.4,6.76,0,8.05,1,0
+Civil Engineering,M,68.4,0,5.37,71.3,8,1,0
+Civil Engineering,F,90.33,0,5.64,77.6,8.8,1,1
+Civil Engineering,M,74.1,0,5.58,72.7,8.65,1,0
+Civil Engineering,F,55.1,0,5.25,79,7.55,1,0
+Civil Engineering,F,64.33,0,5.03,72.7,8,1,0
+Civil Engineering,M,72,0,5.14,77.8,8.15,1,0
+Computer Science & Engineering,M,85.5,71.8,8.3,0,9.15,1,1
+Computer Science & Engineering,M,87.4,71,7.77,0,9.15,1,1
+Computer Science & Engineering,M,85.5,77.4,6.85,0,8.6,1,0
+Computer Science & Engineering,M,72.67,74.4,7.59,0,9.2,1,1
+Computer Science & Engineering,M,72.2,65.8,7.85,0,9.35,1,0
+Computer Science & Engineering,M,93.1,85.4,7.83,0,9.2,1,1
+Computer Science & Engineering,M,81.7,84,7.62,0,8.95,1,1
+Computer Science & Engineering,F,95,86.2,8.45,0,9.25,0,1
+Computer Science & Engineering,M,70.3,66.2,7.35,0,8.95,1,1
+Computer Science & Engineering,M,87.4,86.8,7.53,0,9.15,1,1
+Computer Science & Engineering,M,89.3,57,6.87,0,8.35,1,0
+Computer Science & Engineering,M,85.5,71.6,7.92,0,8.7,1,0
+Computer Science & Engineering,M,76,82.6,7.82,0,9.2,1,0
+Computer Science & Engineering,F,76.83,78.2,6.94,0,8.3,1,0
+Computer Science & Engineering,M,86.17,79.8,7.81,0,8.75,1,1
+Computer Science & Engineering,M,58.9,63.8,5.09,0,8.5,1,0
+Computer Science & Engineering,M,93.1,76.6,6.5,0,8.5,1,0
+Computer Science & Engineering,F,66.5,58.2,7.06,0,9.15,1,0
+Computer Science & Engineering,M,74.1,68.8,7.53,0,9.05,1,1
+Computer Science & Engineering,F,80.17,63.6,6.29,0,7.6,1,0
+Computer Science & Engineering,M,91.2,66.2,8.11,0,8.95,1,1
+Computer Science & Engineering,M,75.5,78.6,7.51,0,9.15,1,1
+Computer Science & Engineering,M,76.17,85.2,7.44,0,9.15,1,0
+Computer Science & Engineering,F,77.17,64.2,7.11,0,8.95,1,1
+Computer Science & Engineering,M,76.83,84.4,7.89,0,9.2,1,0
+Computer Science & Engineering,M,71.67,61.4,7.07,0,8.75,1,0
+Computer Science & Engineering,M,81.66,77.6,7.64,0,8.45,1,1
+Computer Science & Engineering,F,95,90.8,8.4,0,9.4,1,0
+Computer Science & Engineering,F,87.4,81.8,8.19,0,9.25,1,1
+Computer Science & Engineering,M,60.8,58.4,7.53,0,9.25,1,0
+Computer Science & Engineering,M,66.5,59,6.81,0,9,1,0
+Computer Science & Engineering,M,95,85.6,7.4,0,9.05,1,0
+Computer Science & Engineering,M,65.83,62.2,5.32,0,8.3,1,1
+Computer Science & Engineering,M,63.16,60,7.47,0,8.7,1,1
+Computer Science & Engineering,M,76,56.8,7.23,0,8.8,1,0
+Computer Science & Engineering,F,66.66,93.2,6.95,0,8.8,1,1
+Computer Science & Engineering,M,88.5,87.4,6.68,0,7.85,1,0
+Computer Science & Engineering,M,81.7,68.6,7.63,0,9.2,1,1
+Computer Science & Engineering,F,81.17,79.4,7.4,0,9.25,0,1
+Computer Science & Engineering,F,83.6,64.4,7.72,0,9.25,1,1
+Computer Science & Engineering,M,87.4,75.6,7.07,0,8.65,1,1
+Computer Science & Engineering,M,81.7,74.46,8.35,0,9.25,1,1
+Computer Science & Engineering,M,59.5,57.8,5.43,0,8.65,1,0
+Computer Science & Engineering,M,87.33,81.8,7.49,0,8.95,1,1
+Computer Science & Engineering,M,68.4,59.6,7.47,0,9.1,1,1
+Computer Science & Engineering,M,93.83,94.2,8.44,0,9,1,1
+Computer Science & Engineering,M,81.7,72,8.14,0,9.1,1,1
+Computer Science & Engineering,F,87.5,70.4,7.62,0,9.2,1,1
+Computer Science & Engineering,M,71.16,50.8,5.74,0,9.05,1,0
+Computer Science & Engineering,F,93.1,78.8,8.62,0,9.15,1,1
+Computer Science & Engineering,M,81.7,77.4,7.99,0,9.15,1,1
+Computer Science & Engineering,M,87.4,74.6,7.73,0,9.15,1,1
+Computer Science & Engineering,M,87.83,79,7.23,0,9,1,0
+Computer Science & Engineering,F,66,49,6.42,0,8.2,1,0
+Computer Science & Engineering,M,76,77.8,7.78,0,9.25,1,1
+Computer Science & Engineering,F,95,95,7.86,0,9.2,1,1
+Computer Science & Engineering,M,66.17,58.2,7.07,0,9.1,0,0
+Computer Science & Engineering,F,86.83,71.2,7.07,0,8.4,1,1
+Computer Science & Engineering,M,62.7,60.4,7.26,0,9.15,1,0
+Computer Science & Engineering,F,78.83,74.6,3.92,0,0,1,0
+Computer Science & Engineering,M,77.9,74.2,8.02,0,9.2,0,1
+Computer Science & Engineering,F,81.83,57.4,6.99,0,8.7,1,0
+Computer Science & Engineering,M,81.7,72,7.66,0,9.15,1,0
+Computer Science & Engineering,M,88.83,78.8,7.14,0,9.15,0,0
+Computer Science & Engineering,M,83.6,57,7.56,0,8.95,1,1
+Computer Science & Engineering,M,85.5,66.6,8.27,0,9,1,1
+Computer Science & Engineering,M,62.7,62.4,6.54,0,8.5,0,0
+Computer Science & Engineering,M,80,73.4,7.18,0,8.2,1,0
+Computer Science & Engineering,M,90,93.8,7.86,0,9.1,0,1
+Computer Science & Engineering,M,89.33,80.4,7.37,0,8.95,1,0
+Computer Science & Engineering,M,85.5,72.6,7.82,0,9.05,1,1
+Computer Science & Engineering,M,87.4,66.4,7.94,0,9.1,1,1
+Computer Science & Engineering,M,79.33,78.8,6.82,0,8.35,1,1
+Computer Science & Engineering,M,79.8,63.2,7.38,0,8.95,1,1
+Computer Science & Engineering,M,83.6,69,7.44,0,9.1,1,1
+Computer Science & Engineering,M,62.7,77.4,7.73,0,9.05,1,1
+Computer Science & Engineering,F,52,53.4,6.94,0,8.6,1,0
+Computer Science & Engineering,F,83.83,78,7.25,0,9,1,1
+Computer Science & Engineering,M,87.4,68.2,7.56,0,9.1,1,1
+Computer Science & Engineering,F,83.6,90.4,8.63,0,9.25,1,1
+Computer Science & Engineering,M,72.2,80.8,8.08,0,9.05,1,1
+Computer Science & Engineering,M,64.83,79.4,8.19,0,9.15,0,1
+Computer Science & Engineering,M,93.17,88.8,7.59,0,9.1,1,1
+Computer Science & Engineering,F,78.5,72.2,6.94,0,8.8,1,0
+Computer Science & Engineering,F,85.5,71.2,7.9,0,9.15,1,1
+Computer Science & Engineering,F,74.5,68.4,7.22,0,9,1,1
+Computer Science & Engineering,M,82,87.2,7.82,0,8.95,0,1
+Computer Science & Engineering,M,84.83,82.4,8.03,0,8.95,1,1
+Computer Science & Engineering,F,87.4,81.8,7.82,0,8.95,1,1
+Computer Science & Engineering,F,95,91.4,8.51,0,9.1,1,1
+Computer Science & Engineering,F,79.5,82,7.27,0,9.15,1,0
+Computer Science & Engineering,F,90.83,91,7.51,0,8.7,1,0
+Computer Science & Engineering,F,74,69.4,7.95,0,9.2,1,1
+Computer Science & Engineering,M,77.9,84,8.65,0,9.15,1,1
+Computer Science & Engineering,M,77.9,80.6,7.53,0,9.3,1,1
+Computer Science & Engineering,M,55.1,74,7.47,0,8.9,1,1
+Computer Science & Engineering,M,85.33,78.4,8.02,0,9.2,1,1
+Computer Science & Engineering,M,85.5,87,8.16,0,9.05,1,1
+Computer Science & Engineering,M,70.3,61.8,7.52,0,9,1,0
+Computer Science & Engineering,M,80.33,77.6,7.82,0,9.3,1,1
+Computer Science & Engineering,F,66.66,55.8,5.43,0,8.15,1,0
+Computer Science & Engineering,M,70.3,68,6.72,0,8.8,1,0
+Computer Science & Engineering,M,93.1,69.2,8.42,0,8.95,1,1
+Computer Science & Engineering,M,88.35,72.8,8.2,0,9.15,1,1
+Computer Science & Engineering,F,75.83,68.6,7.86,0,9,1,1
+Computer Science & Engineering,M,84,0,6.99,0,8.35,1,1
+Computer Science & Engineering,M,95,88.8,8.23,0,9.05,1,1
+Computer Science & Engineering,F,95,89.8,7.97,0,9.15,1,1
+Computer Science & Engineering,M,86.33,74.8,7.07,0,8.95,1,1
+Computer Science & Engineering,M,90.17,81.2,7.63,0,9.1,1,1
+Computer Science & Engineering,M,83.6,76,8.02,0,8.95,1,0
+Computer Science & Engineering,M,81.5,82.8,7.63,0,8.8,1,0
+Computer Science & Engineering,M,94.4,83,7.74,0,9,1,1
+Computer Science & Engineering,M,81.7,77.8,7.39,0,8.75,1,0
+Computer Science & Engineering,M,85.5,77.2,7.46,0,8.9,1,1
+Computer Science & Engineering,M,55.1,0,5.19,64.4,8.65,1,1
+Computer Science & Engineering,M,60,0,5.27,74.4,8.75,1,1
+Computer Science & Engineering,M,64.83,0,5.13,68.2,8.5,1,1
+Computer Science & Engineering,M,53.5,0,5.11,56.8,8.5,1,0
+Computer Science & Engineering,F,81.83,0,5.44,84.2,8.75,1,1
+Computer Science & Engineering,F,86.83,0,5.4,77.4,8.7,1,1
+Computer Science & Engineering,F,78.66,0,5.17,77,8.7,0,0
+Computer Science & Engineering,M,64.66,0,5.59,78.1,8.6,1,1
+Computer Science & Engineering,M,89.16,0,5.67,78.1,9.1,1,0
+Computer Science & Engineering,F,81.5,0,5.39,77.6,8.55,1,0
+Computer Science & Engineering,M,55.1,0,5.26,66.7,9.25,1,1
+Computer Science & Engineering,M,83.66,0,5.37,77.7,8.7,1,0
+Computer Science & Engineering,M,78.17,86.4,7.22,0,8.65,1,0
+Electrical Engineering,M,93.5,79.2,7.47,0,9.25,1,0
+Electrical Engineering,M,73.83,70.6,6.33,0,8.6,1,0
+Electrical Engineering,M,64.6,70.4,7,0,8.95,1,1
+Electrical Engineering,M,77.5,77.8,5.57,0,8.25,1,1
+Electrical Engineering,M,52.5,63,6.54,0,8.4,1,0
+Electrical Engineering,M,57,81.4,6.84,0,8.7,1,0
+Electrical Engineering,F,93.1,72.4,7.71,0,8.9,1,1
+Electrical Engineering,F,89.3,704,7.51,0,8.95,1,1
+Electrical Engineering,M,89.33,81.6,7.93,0,8.25,1,1
+Electrical Engineering,M,85,80.8,8.62,0,9.25,1,1
+Electrical Engineering,M,60.8,52.8,6.93,0,8.85,1,0
+Electrical Engineering,M,67,57,6.38,0,8.35,0,0
+Electrical Engineering,M,89.3,78.6,7.71,0,9.1,1,1
+Electrical Engineering,F,70.3,76.8,7.65,0,9.2,0,0
+Electrical Engineering,M,75.33,67,6.43,0,8.3,0,0
+Electrical Engineering,M,77.9,63.8,7.75,0,9.05,1,1
+Electrical Engineering,M,68.83,64.8,6.47,0,8.1,1,0
+Electrical Engineering,M,69.67,66,6.69,0,8.7,1,0
+Electrical Engineering,M,90.83,73.83,8.26,0,8.95,1,1
+Electrical Engineering,M,79.8,65,8.03,0,9.35,1,0
+Electrical Engineering,M,81.4,63.4,6.49,0,8.2,1,0
+Electrical Engineering,M,77.67,87.4,7.26,0,9.05,1,1
+Electrical Engineering,M,70,69.6,7.1,0,8.8,1,0
+Electrical Engineering,M,88.33,82.4,7.34,0,8.95,1,0
+Electrical Engineering,F,72.16,78.8,7.67,0,9.25,1,0
+Electrical Engineering,F,70.3,67.6,8.08,0,9.2,1,0
+Electrical Engineering,F,66.5,57.8,6.63,0,8.95,1,0
+Electrical Engineering,M,78.66,72.6,6.49,0,8.7,1,0
+Electrical Engineering,M,87.17,79.6,6.65,0,9.05,1,0
+Electrical Engineering,M,57,51.2,6.51,0,8.5,1,0
+Electrical Engineering,M,73.5,72.4,8.31,0,9.3,1,1
+Electrical Engineering,M,83.33,88.6,7.76,0,9.05,1,1
+Electrical Engineering,M,70.3,70.2,7.27,0,9.2,1,1
+Electrical Engineering,M,68.67,61.2,6.81,0,8.85,1,0
+Electrical Engineering,M,87.5,88.8,7.6,0,8.95,1,0
+Electrical Engineering,M,55,48.4,6.63,0,8.7,0,0
+Electrical Engineering,M,85.5,92,8.11,0,9.55,1,1
+Electrical Engineering,M,81.7,85.2,8.01,0,9.2,1,1
+Electrical Engineering,M,82.83,61.4,7.15,0,8.45,1,0
+Electrical Engineering,M,81.17,79.2,7.34,0,8.7,1,0
+Electrical Engineering,M,83.83,79.8,7.1,0,8.5,1,0
+Electrical Engineering,M,91.17,92.2,8.43,0,9.45,1,1
+Electrical Engineering,F,95,74.2,8.34,0,9.55,1,1
+Electrical Engineering,M,93.1,89.2,8.02,0,9.05,1,1
+Electrical Engineering,F,95,82.2,8.64,0,9.6,1,1
+Electrical Engineering,M,77.9,63.8,8.17,0,9.3,1,1
+Electrical Engineering,M,70,71.16,8.13,0,9.75,1,1
+Electrical Engineering,M,68.5,82.6,7.38,0,9.15,1,0
+Electrical Engineering,F,68.4,71.6,7.35,0,9.1,1,1
+Electrical Engineering,F,59.16,62.2,7.55,0,8.9,1,0
+Electrical Engineering,F,95,83.6,8.89,0,9.55,1,1
+Electrical Engineering,M,93.1,82.4,8.19,0,9.25,1,1
+Electrical Engineering,F,81.7,62.6,7.49,0,8.9,1,1
+Electrical Engineering,M,78.83,87,7.72,0,9.05,1,0
+Electrical Engineering,M,64.6,76.6,6.94,0,8.9,1,1
+Electrical Engineering,M,92,82.8,5.37,0,0,1,0
+Electrical Engineering,M,73.33,69.4,6.87,0,8.65,1,0
+Electrical Engineering,M,68.4,76,8.11,0,9.25,1,0
+Electrical Engineering,F,83.17,59.6,7.54,0,9.05,1,0
+Electrical Engineering,M,84.17,85.6,8.37,0,9.15,1,1
+Electrical Engineering,M,93.1,69,7.48,0,9.05,1,0
+Electrical Engineering,M,57.33,52.2,5.71,0,9.4,1,0
+Electrical Engineering,M,68.4,0,5.94,81.9,9.2,1,0
+Electrical Engineering,F,79.66,0,5.92,76.7,9.6,1,1
+Electrical Engineering,M,81.33,0,6.05,79.7,9.4,1,0
+Electrical Engineering,M,56.5,0,4.93,57.2,8.75,1,0
+Electrical Engineering,M,74.83,0,4.98,68.3,8.7,0,0
+Electronics & Communication Engineering,M,81.83,87.4,7.54,0,8.55,1,1
+Electronics & Communication Engineering,M,70.3,66.8,7.61,0,9.25,1,1
+Electronics & Communication Engineering,M,72.2,64.6,7.87,0,9.4,1,1
+Electronics & Communication Engineering,F,81.7,79.4,7.92,0,9.3,1,0
+Electronics & Communication Engineering,F,67.83,53.8,6.96,0,9,0,1
+Electronics & Communication Engineering,M,83.6,87.6,8.39,0,9.35,1,1
+Electronics & Communication Engineering,M,85.5,68.2,7.56,0,9.15,1,1
+Electronics & Communication Engineering,F,82.67,80.4,7.03,0,8.45,1,1
+Electronics & Communication Engineering,M,74.1,76.2,8.71,0,9.65,1,1
+Electronics & Communication Engineering,M,87.33,85,7.74,0,9.3,1,1
+Electronics & Communication Engineering,F,66.5,70.6,6.64,0,8.65,1,1
+Electronics & Communication Engineering,M,66.5,68.4,6.74,0,8.55,1,0
+Electronics & Communication Engineering,M,83.6,70.6,6.89,0,8.8,0,0
+Electronics & Communication Engineering,M,65.17,66.83,6.82,0,8.6,1,0
+Electronics & Communication Engineering,M,83.6,64,6.92,0,8.6,1,1
+Electronics & Communication Engineering,M,72.2,52.2,7.23,0,8.65,1,1
+Electronics & Communication Engineering,M,89.83,79.4,6.67,0,8.6,1,0
+Electronics & Communication Engineering,M,95,83,7.17,0,8.9,1,1
+Electronics & Communication Engineering,F,95,80.2,7.59,0,9,1,1
+Electronics & Communication Engineering,F,93.1,78.6,7.4,0,9.2,1,0
+Electronics & Communication Engineering,M,91.17,81.8,7.27,0,9,1,1
+Electronics & Communication Engineering,M,72.2,66.6,6.95,0,8.9,1,1
+Electronics & Communication Engineering,M,71.33,77.6,7.87,0,8.65,1,0
+Electronics & Communication Engineering,F,81.33,77,7.55,0,8.75,1,1
+Electronics & Communication Engineering,F,86.45,81.2,7.73,0,9.15,1,1
+Electronics & Communication Engineering,M,68.4,93.2,6.76,0,8.6,1,0
+Electronics & Communication Engineering,M,80.33,80.2,6.41,0,8.45,1,0
+Electronics & Communication Engineering,M,83.33,81,6.64,0,8.1,1,0
+Electronics & Communication Engineering,F,72.33,68,7.06,0,7.95,1,1
+Electronics & Communication Engineering,F,88.33,85.2,6.8,0,8.75,0,0
+Electronics & Communication Engineering,F,89.3,70.8,7.74,0,9,1,1
+Electronics & Communication Engineering,M,73,69.6,5.49,0,8.7,1,0
+Electronics & Communication Engineering,F,74.5,57.6,6.25,0,7.9,0,0
+Electronics & Communication Engineering,M,81.7,70.8,7.67,0,9.2,1,1
+Electronics & Communication Engineering,M,77.67,75,7.45,0,9.2,1,1
+Electronics & Communication Engineering,M,87.4,68.4,7.49,0,9.15,1,1
+Electronics & Communication Engineering,M,88.67,78,7.59,0,9.2,1,1
+Electronics & Communication Engineering,M,91.5,93,7.66,0,9.05,1,1
+Electronics & Communication Engineering,F,77.9,80.2,7.78,0,8.55,1,0
+Electronics & Communication Engineering,M,93.1,72.8,8.1,0,9.05,1,1
+Electronics & Communication Engineering,M,74.1,59.4,7.23,0,9.1,1,1
+Electronics & Communication Engineering,M,79.8,53.8,6.83,0,8.5,1,0
+Electronics & Communication Engineering,M,81.83,85,6.48,0,8.6,1,0
+Electronics & Communication Engineering,F,89.3,89.2,8.13,0,8.95,1,1
+Electronics & Communication Engineering,M,77.9,80.6,7.21,0,8.75,1,1
+Electronics & Communication Engineering,M,81.7,89.4,8.46,0,9.15,1,0
+Electronics & Communication Engineering,F,70.3,57.4,6.18,0,7.85,1,0
+Electronics & Communication Engineering,M,89.16,82.4,8.6,0,9.3,1,1
+Electronics & Communication Engineering,M,82.83,82,8.11,0,8.85,0,1
+Electronics & Communication Engineering,F,95,69,7.49,0,8.9,1,1
+Electronics & Communication Engineering,F,90,86,8.28,0,8.75,1,1
+Electronics & Communication Engineering,M,77.9,70,7.88,0,8.7,1,1
+Electronics & Communication Engineering,M,68.83,84,8.21,0,8.6,1,1
+Electronics & Communication Engineering,F,78.5,70.2,6.78,0,8.35,1,0
+Electronics & Communication Engineering,F,87.33,81.2,6.84,0,8.25,0,0
+Electronics & Communication Engineering,M,70.3,62.2,7.15,0,8.9,1,1
+Electronics & Communication Engineering,M,76,66.6,7.54,0,8.8,1,1
+Electronics & Communication Engineering,M,76,69.4,8.15,0,8.65,1,1
+Electronics & Communication Engineering,F,84.5,72.6,7.57,0,8.9,1,1
+Electronics & Communication Engineering,M,68.4,47.4,5.09,0,8,0,0
+Electronics & Communication Engineering,M,53.2,67.2,6.9,0,8.6,0,1
+Electronics & Communication Engineering,M,66.16,0,4.71,69.3,7.15,0,0
+Electronics & Communication Engineering,M,64.83,0,4.8,66.3,8.5,0,0
+Electronics & Communication Engineering,M,68.66,0,4.27,63.2,6.9,1,0
+Electronics & Communication Engineering,M,53.2,0,4.64,54.6,8.05,0,0
+Electronics & Instrumentation Engineering,F,89.3,81.6,8.52,0,9.4,1,1
+Electronics & Instrumentation Engineering,F,60.8,51,6.94,0,8.6,1,0
+Electronics & Instrumentation Engineering,F,77.9,66,7.09,0,8.65,0,0
+Electronics & Instrumentation Engineering,M,72.67,81.6,7.24,0,8.4,1,0
+Electronics & Instrumentation Engineering,M,79.8,64.8,6.89,0,8.55,1,1
+Electronics & Instrumentation Engineering,M,76,59.4,7.15,0,9,1,1
+Electronics & Instrumentation Engineering,M,60.8,62.2,6.24,0,8.3,0,1
+Electronics & Instrumentation Engineering,F,71.83,60,6.83,0,8.15,1,0
+Electronics & Instrumentation Engineering,M,58.83,66.8,5.13,0,7.75,1,0
+Electronics & Instrumentation Engineering,M,55.5,51.6,6.63,0,8.2,1,0
+Electronics & Instrumentation Engineering,M,79,55.8,6.98,0,8.35,1,0
+Electronics & Instrumentation Engineering,M,89.3,73.4,7.5,0,8.35,1,1
+Electronics & Instrumentation Engineering,F,80.66,65,6.89,0,8.3,1,0
+Electronics & Instrumentation Engineering,M,62.7,55.2,6.61,0,8.65,0,0
+Electronics & Instrumentation Engineering,F,62.17,52.4,6.64,0,7.85,1,1
+Electronics & Instrumentation Engineering,F,77.83,58,7.14,0,8.45,1,0
+Electronics & Instrumentation Engineering,F,55.1,67.4,7.1,0,8.55,1,0
+Electronics & Instrumentation Engineering,M,62.7,53.6,6.95,0,8.75,1,1
+Electronics & Instrumentation Engineering,F,61.33,50.8,6.48,0,7.7,1,0
+Electronics & Instrumentation Engineering,M,49.4,60,6.09,0,8.45,1,0
+Electronics & Instrumentation Engineering,M,87.4,67.4,6.33,0,8.45,1,0
+Electronics & Instrumentation Engineering,M,64.6,78.2,7.54,0,8.6,1,1
+Electronics & Instrumentation Engineering,F,73.66,73.2,6.78,0,7.9,1,0
+Electronics & Instrumentation Engineering,F,91.2,80,7.31,0,8.35,0,1
+Electronics & Instrumentation Engineering,F,95.83,89.4,8.19,0,8.75,0,0
+Electronics & Instrumentation Engineering,F,63.5,62.4,7.11,0,8.85,0,0
+Electronics & Instrumentation Engineering,F,80.17,56.6,7.66,0,8.8,1,0
+Electronics & Instrumentation Engineering,F,71.25,60.2,7.46,0,9,1,1
+Electronics & Instrumentation Engineering,M,81.7,67.4,6.65,0,8.3,1,0
+Electronics & Instrumentation Engineering,M,68.4,58.6,6.41,0,8.1,1,1
+Electronics & Instrumentation Engineering,F,73.66,73,6.93,0,8.25,0,0
+Electronics & Instrumentation Engineering,M,68.4,63.8,7.85,0,8.8,1,1
+Electronics & Instrumentation Engineering,F,55.5,53.6,5.53,0,5.8,1,0
+Electronics & Instrumentation Engineering,M,66.5,61.8,8.31,0,9.25,1,1
+Electronics & Instrumentation Engineering,M,66.83,57,6.79,0,8.3,1,1
+Electronics & Instrumentation Engineering,F,87.4,74,7.87,0,8.75,1,1
+Electronics & Instrumentation Engineering,M,81,77.2,6.9,0,8.35,1,0
+Electronics & Instrumentation Engineering,F,89.33,85,8.74,0,9.25,1,1
+Electronics & Instrumentation Engineering,M,70.3,70.83,6.86,0,8.45,1,0
+Electronics & Instrumentation Engineering,F,89.5,84.4,7.15,0,8.55,1,0
+Electronics & Instrumentation Engineering,F,78,73.4,7.31,0,8.4,1,0
+Mechanical Engineering,M,83.6,66.4,7.73,0,8.85,1,1
+Mechanical Engineering,M,89.3,73.8,8.09,0,8.85,1,1
+Mechanical Engineering,M,76.67,63.6,6.55,0,9.15,1,0
+Mechanical Engineering,M,53.5,56.6,5.06,0,8.25,1,0
+Mechanical Engineering,M,68.4,52,6.95,0,8.7,1,0
+Mechanical Engineering,M,73,68.8,6.93,0,9.15,1,0
+Mechanical Engineering,M,90,79,7.33,0,9.2,1,0
+Mechanical Engineering,M,70.67,88.2,7.75,0,8.95,1,1
+Mechanical Engineering,M,86.33,84.2,7.4,0,9.25,1,1
+Mechanical Engineering,M,88.83,87.6,8.38,0,9.15,1,0
+Mechanical Engineering,M,93.17,80.2,7.02,0,8.7,1,0
+Mechanical Engineering,M,66.69,85,8.25,0,9.3,1,0
+Mechanical Engineering,M,70.3,73,7.74,0,9.1,1,0
+Mechanical Engineering,M,70.3,72.6,7.94,0,9.4,1,0
+Mechanical Engineering,M,87.66,87,7.97,0,9.1,0,1
+Mechanical Engineering,M,81.7,73.2,7.45,0,9.3,1,0
+Mechanical Engineering,M,89.3,64.8,7.11,0,8.8,1,0
+Mechanical Engineering,M,95,74.2,7.28,0,9.25,1,0
+Mechanical Engineering,M,85.5,80.4,7.86,0,9.25,1,0
+Mechanical Engineering,M,83.66,60,5.33,0,8.35,0,0
+Mechanical Engineering,M,78.67,88.4,7.19,0,9.15,1,0
+Mechanical Engineering,M,70.3,48.4,5.58,0,7.75,0,0
+Mechanical Engineering,M,58.9,58.2,7.77,0,9.05,1,1
+Mechanical Engineering,M,77,83.2,8.03,0,9.4,1,0
+Mechanical Engineering,M,68.4,52,6.54,0,8.6,1,0
+Mechanical Engineering,M,93.5,90,8.25,0,9.1,1,0
+Mechanical Engineering,M,79.83,69,6.98,0,8.95,1,0
+Mechanical Engineering,M,84,84.2,8.07,0,9.3,1,0
+Mechanical Engineering,M,78.33,60,6.86,0,8.7,1,0
+Mechanical Engineering,M,87.4,80.6,8.04,0,9.5,1,1
+Mechanical Engineering,M,83.67,65.2,6.82,0,8.85,1,1
+Mechanical Engineering,M,83.67,84,6.35,0,3.15,1,0
+Mechanical Engineering,M,75.67,60.6,6.94,0,8.55,1,0
+Mechanical Engineering,M,92.33,71.4,7.42,0,9.15,1,1
+Mechanical Engineering,M,74.1,58.8,4.75,0,5.9,1,0
+Mechanical Engineering,M,70.3,74.8,7.7,0,9,1,1
+Mechanical Engineering,F,84,79.6,7.25,0,8.9,1,0
+Mechanical Engineering,M,67.17,65.6,7.78,0,9.25,1,1
+Mechanical Engineering,M,87.17,85.6,7.48,0,8.55,1,0
+Mechanical Engineering,M,70.3,60.8,7.39,0,8.95,1,1
+Mechanical Engineering,F,87.4,76.2,7.73,0,9.05,1,0
+Mechanical Engineering,M,87.4,77.8,6.83,0,8.85,1,0
+Mechanical Engineering,M,85.33,84.8,7.68,0,9.1,1,0
+Mechanical Engineering,M,60.8,52.6,6.79,0,8.8,1,0
+Mechanical Engineering,M,87,76.6,6.77,0,8.95,1,0
+Mechanical Engineering,M,80.17,58.6,6.78,0,8.6,1,0
+Mechanical Engineering,M,77.9,54.8,6.98,0,9,1,1
+Mechanical Engineering,M,83.6,82.2,7.59,0,9.15,1,0
+Mechanical Engineering,M,83.6,77,7.01,0,8.85,1,1
+Mechanical Engineering,M,83.17,68.6,7.23,0,8.8,1,0
+Mechanical Engineering,M,70.17,82.4,7.19,0,8.95,1,1
+Mechanical Engineering,M,83.6,79.2,8.2,0,9.55,1,1
+Mechanical Engineering,M,95,70.2,7.72,0,9.25,1,0
+Mechanical Engineering,F,91.2,76,7.69,0,8.75,1,0
+Mechanical Engineering,M,58.9,55.2,6.69,0,8.9,1,0
+Mechanical Engineering,M,91.2,74.4,7.55,0,9,1,1
+Mechanical Engineering,M,79.8,68.8,7.39,0,9,1,0
+Mechanical Engineering,M,59.67,50.2,6.43,0,8.7,1,0
+Mechanical Engineering,M,70.83,61.6,5.28,0,7.45,1,0
+Mechanical Engineering,M,89.17,81.6,8.29,0,9.2,1,1
+Mechanical Engineering,M,70.66,0,5.75,75.8,9.05,1,1
+Mechanical Engineering,M,75.5,0,5.09,59.2,8.65,1,0
+Mechanical Engineering,M,73.16,0,5.47,63.5,8.8,1,0
+Mechanical Engineering,M,55.1,0,5.46,60.1,8.7,1,0
+Mechanical Engineering,M,47.5,0,5.26,67.1,8.8,1,0
+Mechanical Engineering,M,81.83,0,5.42,62.3,8.8,1,0
+Petro Chemical,M,79.17,87.4,8.5,0,9.45,1,0
+Petro Chemical,M,75.33,70.8,7.13,0,8.85,1,0
+Petro Chemical,M,82.83,77.6,8.48,0,9.85,1,1
+Petro Chemical,M,89.83,76.2,8.37,0,9.9,1,0
+Petro Chemical,M,85.5,76.6,7.69,0,9.2,1,0
+Petro Chemical,M,77.67,78.4,6.54,0,8.2,1,1
+Petro Chemical,M,75.17,76,6.96,0,8.7,0,0
+Petro Chemical,F,70.3,54.2,7.59,0,9.3,1,0
+Petro Chemical,M,81.17,76.6,7.09,0,8.75,0,0
+Petro Chemical,F,9205,94.6,8.78,0,9.85,1,0
+Petro Chemical,M,80.83,83,7.44,0,9,1,0
+Petro Chemical,M,81.33,83.2,8.14,0,9.9,1,0
+Petro Chemical,M,83.6,80.2,7.04,0,8.55,1,0
